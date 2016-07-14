@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  consul:
+    build: .
+    image: consul 
+    container_name: consul 
+    restart: always
+    environment:
+        VERSION: 1.0.0
+    network_mode: host
+    volumes:
+        - /data/consul:/consul/data
