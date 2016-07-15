@@ -2,12 +2,12 @@ version: '2'
 
 services:
     consul-watch-conf:
-        image: daocloud.io/jsongo/consul
+        image: daocloud.io/jsongo/consul-watch
         container_name: consul-watch-conf
         network_mode: host
         environment:
             VERSION: 1.0.1
-        command: 
-            consul watch -type keyprefix -prefix jinyu/conf/ /data/code/script/conf-update.sh -http-addr=127.0.0.1:8500
+            WATCH_TYPE: keyprefix
+            WATCH_TARGET: jinyu/conf/
         volumes:
-            - /data/code/script:/data/code/script
+            - /data/code/script/conf-update.sh:/script.sh
