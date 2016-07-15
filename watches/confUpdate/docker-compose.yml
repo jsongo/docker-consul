@@ -2,7 +2,7 @@ version: '2'
 
 services:
     consul-watch-conf:
-        image: daocloud.io/jsongo/consul-watch
+        image: daocloud.io/jsongo/consul-watch:latest
         container_name: consul-watch-conf
         network_mode: host
         environment:
