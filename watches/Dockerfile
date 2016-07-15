@@ -26,6 +26,6 @@ RUN apk add --no-cache ca-certificates gnupg openssl && \
     apk del gnupg openssl && \
     rm -rf /root/.gnupg
 
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/bin/sh", "-c"]
