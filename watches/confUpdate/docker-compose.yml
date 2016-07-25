@@ -10,7 +10,6 @@ services:
             WATCH_TYPE: keyprefix
             WATCH_TARGET: jinyu/conf/
             SCRIPT: /conf-update.sh
-        command: sh -c /usr/local/bin/entrypoint.sh
+        command: sh -c /entrypoint.sh
         volumes:
-            - ../entrypoint.sh:/usr/local/bin/entrypoint.sh
             - ./conf-update.sh:/conf-update.sh

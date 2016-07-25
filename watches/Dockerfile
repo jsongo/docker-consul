@@ -10,6 +10,8 @@ RUN apt-get install -y wget unzip
 RUN wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip && \
     unzip consul_${CONSUL_VERSION}_linux_amd64.zip
 
+RUN apt-get install -y curl
+
 COPY entrypoint.sh /
 
 ENTRYPOINT ["/entrypoint.sh"]
