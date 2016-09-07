@@ -11,8 +11,9 @@ services:
             WATCH_TYPE: checks
             WATCH_STATE: critical 
             SCRIPT: /script.sh
-        command: sh -c /entrypoint.sh
+        command: supervisord -c /etc/supervisord.conf
         volumes:
             - ./script.sh:/script.sh
             - ./main.py:/main.py
             - .:/data
+            - watch.ini:/etc/supervisord.d/watch.ini
