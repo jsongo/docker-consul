@@ -4,7 +4,7 @@ services:
     consul-watch-services:
         image: daocloud.io/jsongo/consul-watch:latest
         container_name: consul-watch-services
-        #network_mode: host
+        network_mode: host
         restart: always
         environment:
             VERSION: 1.0.0

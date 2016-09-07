@@ -11,6 +11,7 @@ RUN wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL
     unzip consul_${CONSUL_VERSION}_linux_amd64.zip
 
 RUN apt-get install -y curl
+RUN apt-get install -y python 
 
 COPY entrypoint.sh /
 
