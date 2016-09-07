@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  consul:
+    image: daocloud.io/jsongo/consul
+    container_name: consul
+    network_mode: host
+    restart: always
+    environment:
+      #- "constraint:node==nb"
+      - NODE_NAME=gamesvr
+    command: agent -server -bind 127.0.0.1 -bootstrap -advertise 123.56.85.164 -log-level debug -client 127.0.0.1 -ui
+    volumes:
+        - /data/consul:/consul/data

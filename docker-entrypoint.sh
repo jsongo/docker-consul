@@ -61,6 +61,7 @@ if [ "$1" = 'agent' ]; then
     set -- consul agent \
         -data-dir="$CONSUL_DATA_DIR" \
         -config-dir="$CONSUL_CONFIG_DIR" \
+        -node="$NODE_NAME" \
         $CONSUL_BIND \
         $CONSUL_CLIENT \
         "$@"

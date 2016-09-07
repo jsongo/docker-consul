@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    consul-watch-services:
+        image: daocloud.io/jsongo/consul-watch:latest
+        container_name: consul-watch-services
+        #network_mode: host
+        restart: always
+        environment:
+            VERSION: 1.0.0
+            WATCH_TYPE: services
+            SCRIPT: /script.sh
+        command: sh -c /entrypoint.sh
+        volumes:
+            - ./script.sh:/script.sh
