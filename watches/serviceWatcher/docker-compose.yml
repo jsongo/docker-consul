@@ -8,8 +8,11 @@ services:
         restart: always
         environment:
             VERSION: 1.0.0
-            WATCH_TYPE: services
+            WATCH_TYPE: checks
+            WATCH_STATE: critical 
             SCRIPT: /script.sh
         command: sh -c /entrypoint.sh
         volumes:
             - ./script.sh:/script.sh
+            - ./main.py:/main.py
+            - .:/data
