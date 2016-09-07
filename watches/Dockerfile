@@ -12,6 +12,11 @@ RUN wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL
 
 RUN apt-get install -y curl
 RUN apt-get install -y python 
+RUN apt-get install -y python-pip \
+    pip install supervisor \
+    echo_supervisord_conf > /etc/supervisord.conf \
+    echo "[include]" >> supervisord.conf && \
+    echo "files = /etc/supervisord.d/*.ini" >> supervisord.conf
 
 COPY entrypoint.sh /
 
